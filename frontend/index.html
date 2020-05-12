@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lantul hotelier Royal</title>
+  <style>
+  body {
+  background: #2869d1;
+
+}
+
+    #map{
+      height:400px;
+      width:100%;
+    }
+  </style>
+   <h3><Center><font size="15">Lantul hotelier Royal</font></center></h3>
+     <center><img src="https://www.discover-romania.com.ro/images/photo_galleries/large/734/Hotel-Royal-4.jpg" class='center'></center>
+    <p style="font-family:courier;font-size:120%"; > Uneori simti nevoia de un rasfat, simti nevoia sa fii inconjurat de eleganta, sa mananci ceva mai special. Ce faci in situatia asta? Vii la Restaurant Royal, unde cu siguranta vei avea o experienta cu totul si cu totul aparte, de la peisajul minunat, pana la servirea ireprosabila.
+  Ca sa nu te plictisesti de acelasi preparate, Restaurant Royal isi schimba meniul o data la trei luni. Toate specialitatile din meniu sunt creatie proprie ale maestrului bucatar. Experienta si talentul bucatarului isi spun cuvantul, dovada fiind minunatiile pe care acesta le creeaza in bucatarie. 
+  Daca vrei sa fii surprins, poti comanda surpriza bucatarului: decizi ce tip de carne doresti, iar bucatarul va face un preparat care nu se afla in meniu, special pentru tine.   
+  Va asteptam cu drag la Restaurant Royal, situat in Urziceni, aproape de iesire de pe drumul european E60 catre Slobozia, la 46 km de Aeroportul Henri Coanda.</p>
+
+  <h4>Vremea in orice oras doriti</h4>
+  <title>Weather Api</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" ></script>
+</head>
+<body>
+
+  <input id="city"></input>
+  <button id="getWeatherForcast">Cauta</button>
+  <div class="ShowWeatherForcast"></div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+      $("#getWeatherForcast").click(function(){
+                
+                var city = $("#city").val();
+            var key  = '4de3768c62b67fe359758977a3efc069';
+            
+            $.ajax({
+              url:'http://api.openweathermap.org/data/2.5/weather',
+              dataType:'json',
+              type:'GET',
+              data:{q:city, appid: key, units: 'metric'},
+
+              success: function(data){
+                var wf = '';
+                $.each(data.weather, function(index, val){
+
+                  wf += '<p><b>' + data.name + ' ' + data.main.temp + '&deg;C ' + 
+                  ' | ' + val.main + ", " + val.description 
+
+                });
+              
+               $(".ShowWeatherForcast").html(wf);
+              }
+
+            })
+
+      });
+    });
+  </script>
+  <h1>Locatiile noastre</h1>
+  <div class="col">
+        <input class="form-control" id="search" type="text" placeholder="Search..." />
+      </div>
+  <div id="map"></div>
+  <script>
+    async function initMap(){
+      // Map options
+      var options = {
+        zoom:16,
+        center:{lat:44.714754,lng:26.641742}
+      }
+		
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      // Listen for click on map
+      google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        addMarker({coords:event.latLng});
+      });
+
+      // Array of markers
+      
+      //sa faci un request GET cu care iei datele din markers.json
+  
+      
+        let fisier = `./markers.json`
+                
+        let response = await fetch(fisier)
+        let markers = await response.json()
+        console.log(markers)
+    
+    
+     /* 
+     express.router('/all', (req, res) => {
+	    const markes = database.getAllFromDb();
+	    res.status(200).json(`./markers.json`);
+	    });*/
+      
+      // Loop through markers
+      for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEHs2MV6Zg2nD82fe-hWdsdSaCy2bZ0To&callback=initMap&libraries=places">
+    </script>
+    <button id="btnCreateEvents" class="btn btn-primary" onclick="makeApiCall();">
+                    Create Events</button>  
+
+<div id="divifm">
+                    <iframe id="ifmCalendar" 
+
+                    src="https://www.google.com/calendar/embed?
+                    height=550&amp;wkst=1&amp;bgcolor=%23FFFFFF&
+                    amp;src=24tn4fht2sssdssfdiqqlsedk%40group.calendar.google.com&
+                    amp;color=%238C500B&amp;ctz=Asia%2FCalcutta"
+
+                        style="border-width: 0" width="950" 
+
+                        height="520" frameborder="0" scrolling="no">
+                    </iframe>
+                </div>
+</body>
+</html>

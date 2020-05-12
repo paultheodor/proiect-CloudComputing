@@ -1,0 +1,102 @@
+[
+        {
+          "coords":{"lat":44.713662,"lng":26.652788},
+          "iconImage":"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+          "content":"<h1>Hotel Royal 1</h1>"
+        },
+        {
+          "coords":{"lat":44.715800,"lng":26.626416},
+          "iconImage":"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+          "content":"<h1>Hotel Royal 2</h1>"
+        },
+         {
+          "coords":{"lat":44.716718,"lng":26.640013},
+          "iconImage":"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+          "content":"<h1>Vila Royal</h1>"
+        },
+         {
+          "coords":{"lat":44.713876,"lng":26.653094},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal5/icon47.png",
+          "content":"<h1>Parcare 1 Hotel Royal 1</h1>"
+        },
+         {
+          "coords":{"lat":44.713371,"lng":26.652970},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal5/icon47.png",
+          "content":"<h1>Parcare 2 Hotel Royal 1</h1>"
+        },
+         {
+          "coords":{"lat":44.715611,"lng":26.626351},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal5/icon47.png",
+          "content":"<h1>Parcare 1 Hotel Royal 2</h1>"
+        },
+         {
+          "coords":{"lat":44.715880,"lng":26.626124},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal5/icon47.png",
+          "content":"<h1>Parcare 2 Hotel Royal 2</h1>"
+        },
+         {
+          "coords":{"lat":44.716852,"lng":26.639988},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal5/icon47.png",
+          "content":"<h1>Parcare Vila Royal</h1>"
+        }, 
+         {
+          "coords":{"lat":44.712561,"lng":26.651815},
+          "iconImage":"http://maps.google.com/mapfiles/kml/shapes/swimming.png",
+          "content":"<h1>Strand Urziceni</h1>"
+        },
+         {
+          "coords":{"lat":44.713570,"lng":26.654815},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal2/icon12.png",
+          "content":"<h1>Parc plopi</h1>"
+        },
+         {
+          "coords":{"lat":44.714889,"lng":26.643958},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal2/icon12.png",
+          "content":"<h1>Parc central 1</h1>"
+        },
+         {
+          "coords":{"lat":44.712475,"lng":26.638958},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal2/icon12.png",
+          "content":"<h1>Parc central 2</h1>"
+        },
+         {
+          "coords":{"lat":44.714488,"lng":26.637155},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal2/icon12.png",
+          "content":"<h1>Parcul nou</h1>"
+        },
+         {
+          "coords":{"lat":44.719155,"lng":26.644661},
+          "iconImage":"http://maps.google.com/mapfiles/kml/shapes/rail.png",
+          "content":"<h1>Gara Urziceni</h1>"
+        },
+         {
+          "coords":{"lat":  44.710744,"lng":26.649262},
+          "iconImage":"http://maps.google.com/mapfiles/kml/shapes/hospitals.png",
+          "content":"<h1>Spital Urziceni</h1>"
+        },
+         {
+          "coords":{"lat":   44.711945,"lng":26.651986},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal2/icon57.png",
+          "content":"<h1>Baza sportiva Urziceni</h1>"
+        },
+         {
+          "coords":{"lat":44.712880,"lng":26.656222},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal2/icon57.png",
+          "content":"<h1>Stadion Urziceni</h1>"
+        },
+         {
+          "coords":{"lat":44.714026,"lng": 26.650283},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal3/icon26.png",
+          "content":"<h1>Profi</h1>"
+        },
+         {
+          "coords":{"lat":44.714122,"lng":26.650890 },
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal3/icon26.png",
+          "content":"<h1>Lidl</h1>"
+        },
+         {
+          "coords":{"lat":44.716183,"lng":26.6461714},
+          "iconImage":"http://maps.google.com/mapfiles/kml/pal3/icon26.png",
+          "content":"<h1>Profi</h1>"
+        }
+      ]
