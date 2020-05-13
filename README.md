@@ -82,6 +82,7 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
 ```
 <br/>
 API-ul Google Maps Javascript este folosit pentru a particulariza o hartă clasică de google maps după bunul plac. Prin intermediul următoarei linie de cod putem particulariza asupra cărei locații să fie centrată harta atunci când utilizatorul accesează site-ul și cât de aprope/departe(zoom) să se afle de acea locație.
+
 ```javascript
   var options = {
         zoom:16,
