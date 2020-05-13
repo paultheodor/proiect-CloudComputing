@@ -78,15 +78,13 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
                 });
               
                $(".ShowWeatherForcast").html(wf);
-
-                
 }
 ```
 
 <br/>
 &emsp;&emsp;&emsp;API-ul Google Maps Javascript este folosit pentru a particulariza o hartă clasică de google maps după bunul plac. Prin intermediul următoarei linie de cod putem particulariza asupra cărei locații să fie centrată harta atunci când utilizatorul accesează site-ul și cât de aprope/departe(zoom) să se afle de acea locație.
 
-```
+```javascript
   var options = {
         zoom:16,
         center:{lat:44.714754,lng:26.641742}
@@ -98,7 +96,7 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
 &emsp;&emsp;&emsp;De asemenea, prin intermediul acestui API am ales să particularizez harta astfel încât să conțină toate punctele de interes din orașul Urziceni sub forma unor markere. Aceste puncte sunt afișate pe hartă pe baza coordonatelor dintr-un fișier json și conțin o descriere succintă și o imagine preluată de pe site-ul: http://kml4earth.appspot.com/icons.html.
 Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii de cod:
 
- ```
+ ```javascript
  let fisier = `./markers.json`
                 
         let response = await fetch(fisier)
@@ -121,7 +119,7 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
 ```
 &emsp;&emsp;&emsp;Un marker fiind reprezentat în fișierul json sub forma:
 
- ```
+ ```json
     {
     "coords":{"lat":44.713662,"lng":26.652788},
     "iconImage":"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
@@ -132,7 +130,7 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
 <br/>
 &emsp;&emsp;&emsp;Ultimul API, Google Calendar, folosește o funcție makeApiCall prin intermediul căreia utilizatorul este redirecționat în aplicație Google Calendar atunci când dorește să introducă un evenimemt. Acest API, poate să fie sincronizat cu aplicația Google Calendar și astfel poate să afișeze toate evenimentele pe care le are utilizatorul. 
 
- ```
+ ```html
  <button id="btnCreateEvents" class="btn btn-primary" onclick="makeApiCall();"> Create Events</button>  
  ```
  
@@ -143,7 +141,7 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
 <br/>
 &emsp;&emsp;&emsp;A doua eroare am întâmpinat-o în momentul în care am dorit să fac API-ul Google Maps Javascript să preia markerele din fișierul json. Eroarea "unexpected fetch token" apărea din cauză că încercam să preiau datele asincron din fișierul json prin intermediul funcției await dar funcția care crea harta nu era o funcție asincronă. Această problemă a fost rezolvată prin modificarea funcției de creare a hărții astfel încât să fie una asincronă.
 
- ```
+ ```javascript
     //funcția de inițializare a hărții
     async function initMap()
     
