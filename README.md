@@ -82,7 +82,7 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
 ```
 <br/>
 &emsp;&emsp;&emsp;API-ul Google Maps Javascript este folosit pentru a particulariza o hartă clasică de google maps după bunul plac. Prin intermediul următoarei linie de cod putem particulariza asupra cărei locații să fie centrată harta atunci când utilizatorul accesează site-ul și cât de aprope/departe(zoom) să se afle de acea locație.
-```
+```javascript
 {
   var options = {
         zoom:16,
@@ -90,7 +90,8 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
       }
       
   var map = new google.maps.Map(document.getElementById('map'), options);
-  }
+}
+
 ```
 &emsp;&emsp;&emsp;De asemenea, prin intermediul acestui API am ales să particularizez harta astfel încât să conțină toate punctele de interes din orașul Urziceni sub forma unor markere. Aceste puncte sunt afișate pe hartă pe baza coordonatelor dintr-un fișier json și conțin o descriere succintă și o imagine preluată de pe site-ul: http://kml4earth.appspot.com/icons.html.
 Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii de cod:
