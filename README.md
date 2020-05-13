@@ -57,6 +57,7 @@ Prin intermediul acestui API, aplicațiile mobile, aplicațiile web și alte sis
 &emsp;&emsp;&emsp;În cadrul proiectului există trei fluxuri de date diferite, fiecare flux fiind caracteristic unui API după cum urmează:
 API-ul OpenWeatherMap primește pe baza unui search bar un șir de caractere care trebuie să fie neapărat denumirea unui oraș, comună sau sat pentru a putea funcționa.
 Prin intermediul ajax programul verifică dacă locația introdusă este corectă și prin intermediul unui GET aduce detaliile despre vreme și le afișează. Toate aceste lucruri putând fi vizualizate în cele ce urmează:
+
 ```javascript
 {
     var city = $("#city").val();
@@ -78,8 +79,8 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
 
                 
 }
-
 ```
+
 <br/>
 &emsp;&emsp;&emsp;API-ul Google Maps Javascript este folosit pentru a particulariza o hartă clasică de google maps după bunul plac. Prin intermediul următoarei linie de cod putem particulariza asupra cărei locații să fie centrată harta atunci când utilizatorul accesează site-ul și cât de aprope/departe(zoom) să se afle de acea locație.
 
@@ -91,8 +92,10 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
       
   var map = new google.maps.Map(document.getElementById('map'), options);
 ```
+
 &emsp;&emsp;&emsp;De asemenea, prin intermediul acestui API am ales să particularizez harta astfel încât să conțină toate punctele de interes din orașul Urziceni sub forma unor markere. Aceste puncte sunt afișate pe hartă pe baza coordonatelor dintr-un fișier json și conțin o descriere succintă și o imagine preluată de pe site-ul: http://kml4earth.appspot.com/icons.html.
 Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii de cod:
+
  ```
  let fisier = `./markers.json`
                 
@@ -126,15 +129,18 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
  
 <br/>
 &emsp;&emsp;&emsp;Ultimul API, Google Calendar, folosește o funcție makeApiCall prin intermediul căreia utilizatorul este redirecționat în aplicație Google Calendar atunci când dorește să introducă un evenimemt. Acest API, poate să fie sincronizat cu aplicația Google Calendar și astfel poate să afișeze toate evenimentele pe care le are utilizatorul. 
+
  ```
  <button id="btnCreateEvents" class="btn btn-primary" onclick="makeApiCall();"> Create Events</button>  
  ```
+ 
 ## Descriere erori și rezolvarea lor
 &emsp;&emsp;&emsp;În cadrul proiectului am întâmpinat destul de multe erori atunci când încercam să dezvolt interfața sau atunci când doream să integrez API-urile în aplicație. Dintre aceste erori, două mi s-au părut destul de simple dar și interesante în momentul în care am găsit soluțiile pentru a le rezolva.
 <br/>
 &emsp;&emsp;&emsp;Prima eroare pe care am întâmpinat-o a fost din cauza API-ului Google Maps Javascript, acesta neputănd genera hărțile din cauza următoarelor erori: "apinotactivatedmaperror" și "invalidkeymaperror". Partea cea mai bună a fost că google oferă link-uri sub mesajele de eroare care redirecționează utilizatorul într-o pagină de help care are rezolvări pentru toate mesajele de eroare. Mesajele anterior menționate apăreau din cauză că nu aveam generat un AP Key valid și nu aveam API-ul activat pe contul meu de google cloud. Partea interesantă a acestor erori este reprezentată de faptul că harta nu este disponibilă în totalitate, ea fiind "For development purposes only". Acest lucru apare deoarece google dorește ca utilizatorii să înregistreze un card de credit pentru a-i putea taxa în funcție de câți utilizatori interacționează cu harta(pentru site-urile web prețul este de 2$ la fiecare 1000 de utilizatori).
 <br/>
-&emsp;&emsp;&emsp;A doua eroare am întâmpinat-o în momentul în care am dorit să fac API-ul Google Maps Javascript să preia markerele din fișierul json. Eroarea "unexpected fetch token" apărea din cauză că încercam să preiau datele asincron din fișierul json prin intermediul funcției await dar funcția care crea harta nu era o funcție asincronă. Această problemă a fost rezolvată prin modificarea funcției de creare a hărții astfel încât să fie una asincronă. 
+&emsp;&emsp;&emsp;A doua eroare am întâmpinat-o în momentul în care am dorit să fac API-ul Google Maps Javascript să preia markerele din fișierul json. Eroarea "unexpected fetch token" apărea din cauză că încercam să preiau datele asincron din fișierul json prin intermediul funcției await dar funcția care crea harta nu era o funcție asincronă. Această problemă a fost rezolvată prin modificarea funcției de creare a hărții astfel încât să fie una asincronă.
+
  ```
     //funcția de inițializare a hărții
     async function initMap()
@@ -144,5 +150,6 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
     let markers = await response.json()
     console.log(markers)
 ```
+
 ## Bibliografie
 &emsp;&emsp;&emsp;Valerică Greavu-Șerban (2015) Cloud Computing Caracteristici și Modele, București: Editura ASE
