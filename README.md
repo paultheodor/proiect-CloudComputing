@@ -92,6 +92,7 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
 ```
 &emsp;&emsp;&emsp;De asemenea, prin intermediul acestui API am ales să particularizez harta astfel încât să conțină toate punctele de interes din orașul Urziceni sub forma unor markere. Aceste puncte sunt afișate pe hartă pe baza coordonatelor dintr-un fișier json și conțin o descriere succintă și o imagine preluată de pe site-ul: http://kml4earth.appspot.com/icons.html.
 Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii de cod:
+</br>
  ```
  let fisier = `./markers.json`
                 
@@ -113,7 +114,9 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
           //icon:props.iconImage
         });
 ```
+</br>
 &emsp;&emsp;&emsp;Un marker fiind reprezentat în fișierul json sub forma:
+</br>
 
  ```
     {
@@ -125,9 +128,11 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
  
 <br/>
 &emsp;&emsp;&emsp;Ultimul API, Google Calendar, folosește o funcție makeApiCall prin intermediul căreia utilizatorul este redirecționat în aplicație Google Calendar atunci când dorește să introducă un evenimemt. Acest API, poate să fie sincronizat cu aplicația Google Calendar și astfel poate să afișeze toate evenimentele pe care le are utilizatorul. 
+</br>
  ```
  <button id="btnCreateEvents" class="btn btn-primary" onclick="makeApiCall();"> Create Events</button>  
  ```
+ </br>
 ## Descriere erori și rezolvarea lor
 &emsp;&emsp;&emsp;În cadrul proiectului am întâmpinat destul de multe erori atunci când încercam să dezvolt interfața sau atunci când doream să integrez API-urile în aplicație. Dintre aceste erori, două mi s-au părut destul de simple dar și interesante în momentul în care am găsit soluțiile pentru a le rezolva.
 <br/>
