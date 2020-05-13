@@ -93,7 +93,7 @@ Prin intermediul ajax programul verifică dacă locația introdusă este corect�
 }
 
 ```
-&emsp;&emsp;&emsp;De asemenea, prin intermediul acestui API am ales să particularizez harta astfel încât să conțină toate punctele de interes din orașul Urziceni sub forma unor markere. Aceste puncte sunt afișate pe hartă pe baza coordonatelor dintr-un fișier json și conțin o descriere succintă și o imagine preluată de pe site-ul: http://kml4earth.appspot.com/icons.html.
+De asemenea, prin intermediul acestui API am ales să particularizez harta astfel încât să conțină toate punctele de interes din orașul Urziceni sub forma unor markere. Aceste puncte sunt afișate pe hartă pe baza coordonatelor dintr-un fișier json și conțin o descriere succintă și o imagine preluată de pe site-ul: http://kml4earth.appspot.com/icons.html.
 Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii de cod:
  ```
  let fisier = `./markers.json`
