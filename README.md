@@ -38,10 +38,12 @@ ca utilizatorul să fie de acord ca datele sale vor fi accesibile companiei care
 Suspiciunile de acces neautorizat sunt de multe ori confirmate de aplicații care nu sunt suficient
 testate sau care sunt construite în scopul extragerii datelor personale, iar avertismentele din
 momentul instalării sunt ignorate de utilizatori.
+
 ## Descriere problemă
 &emsp;&emsp;&emsp;În cadrul acestui proiect am vrut să abordez o problemă ce o să apară atunci când pandemia de COVID-19 o să dispară și anume promovarea turismului în România. Astfel, mi-am propus să creez un site web prin intermediul căruia utilizatorii să poată vedea, pe scurt, o prezentare a unui motel, hotel, pensiune sau chiar lanț hotelier, să poată vedea vremea din locația respectivă, să poată să-și verifice programul pentru a putea vedea în ce perioadă se pot duce și cel mai important, pentru a putea vedea principalele puncte de atracție din orașul/zona repsectivă.
 <br/>
 &emsp;&emsp;&emsp;Astfel, prin intermediul aplicației web se pot realiza lucrurile anterior menționate, toate acestea fiind posibile cu ajutorul a trei API-uri. Astfel, utilizatorii vor putea să reducă timpul atunci când vor dori să-și caute locația și perioada pentru următoarea vacanță deoarece vor avea posibilitatea să vadă prognoza meteo din zona respectivă, vor putea să-și verifice toate evenimentele din calendarul Google și vor putea să vadă atracțiile principale, toate informațiile aflându-se într-o singură pagină.
+
 ## Prezentare API-uri utilizate
 &emsp;&emsp;&emsp;În cadrul site-ului am folosit trei API-uri diferite, toate fiind utile atunci când vine vorba despre un site destinat unui lanț hotelier.
 <br/>
