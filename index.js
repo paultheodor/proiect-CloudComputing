@@ -1,6 +1,17 @@
 //express e un framwework care poate dezvolta o interfata rest
 const express = require("express")
 
+//definire aplicatie
+const app = express()
+
+app.use('/',express.static('frontend'))
+
+//aplicatia care asculta pe un port -> setat de noi + facut setari de firewall
+//8080 portul
+app.listen(process.env.PORT||8080)
+
+//app.listen(8080)
+
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize('profile', 'paultheodor', 'password', {
@@ -21,10 +32,6 @@ const Messages = sequelize.define('messages', {
     message: Sequelize.TEXT
 })
 
-//definire aplicatie
-const app = express()
-
-app.use('/',express.static('frontend'))
 
 // /hello este un endpoint
 //definesc un endpoint de tip GET /hello
@@ -113,7 +120,4 @@ app.delete('/messages/:id', (request, response) => {
     })
 })
 
-//aplicatia care asculta pe un port -> setat de noi + facut setari de firewall
-//8080 portul
-app.listen(8080)
 
