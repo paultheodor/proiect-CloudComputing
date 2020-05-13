@@ -114,6 +114,7 @@ Aceste markere personalizate sunt aduse și afișate pe baza următoarelor linii
         });
 ```
 &emsp;&emsp;&emsp;Un marker fiind reprezentat în fișierul json sub forma:
+
  ```
     {
     "coords":{"lat":44.713662,"lng":26.652788},
